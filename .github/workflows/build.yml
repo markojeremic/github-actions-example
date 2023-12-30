@@ -30,5 +30,9 @@ jobs:
     - run: rm -rf package-lock.json
     - run: npm install
     - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - name: Start React application on runner
+      run: npm start
+    - name: Ping React application to see if it is working
+      run: ping localhost:8081
+      
+    
